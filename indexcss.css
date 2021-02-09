@@ -7,7 +7,37 @@ h1 {
   text-align: center;
 }
 
+h2 {
+  text-align: center;
+}
+
 p {
   font-family: verdana;
   font-size: 20px;
 }
+
+/* Style des liens de la barre de navigation */
+.menuDuHaut a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;	
+  padding: 10px 50px;    /*espacement (haut+bas puis droite+gauche*/
+  text-decoration: none; /*enlever le fait que les liens sont soulignés*/
+
+}
+
+/* Style de la barre de navigation */
+.menuDuHaut {
+  overflow: hidden; /*avoir la barre du menu jusqu'au bout*/
+  background-color: #333; /*gris-noir*/
+  width: 100%;
+}
+
+/* Change de couleur avec passage de la souris */
+.menuDuHaut a:hover {
+  background-color: #ddd; /*fond en blanc-gris*/
+  color: black;		  /*écriture en noir-gris*/
+}
+
+
