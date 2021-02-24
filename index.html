@@ -5,16 +5,15 @@
 <head>
   <meta charset="UTF-8">
   <link rel="shortcut icon" href="icone.png" />
-  <title>Le site TLI :)</title>
+  <title>Association des acupuncteurs</title>
   <link rel="stylesheet" href="indexcss.css">
 </head>
 
 <body>
 
 
-<h1>Le titre de cette page internet</h1>
-
-<h2>Avec un petit commentaire qui va bien</h2>
+<h1>Site de l'Association des Acupuncteurs soucieux de l'Accessibilité</h1>
+<h2>(AAA)</h2>
 
 <div class="menuDuHaut">
 
@@ -28,16 +27,27 @@
 
 </div>
 
-<form>
-    <label for="pathos">Pathologie recherchée :</label>
-    <input type="text" id="pathos" name="pathos_name"/>
-</form> 
+<div class="formulaire">
+  <form>
+    <h1>Connexion</h1>
 
-<p>un petit paragraph oklm</p>
+    <label><b>Nom d'utilisateur</b></label>
+    <input type="text" placeholder="Entrer le nom d'utilisateur" name="username" required>
+    <br>
+    <label><b>Mot de passe</b></label>
+    <input type="password" placeholder="Entrer le mot de passe" name="password" required>
+  </form>
+</div>
+
 
 <p>Cliquez <a href=./page2.html>ici</a> pour aller sur la page2</p>
 
-
+<div class="formulaire">
+  <form>
+    <label for="pathos">Pathologie recherchée :</label>
+    <input type="text" id="pathos" name="pathos_name"/>
+  </form> 
+</div>
 
 </body>
 </html>

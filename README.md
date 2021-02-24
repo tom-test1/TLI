@@ -2,5 +2,4 @@
 Projet TLI 
 Test
 
-Test 2 pour voir si ça marche bien
-Test 3 avec commentaire modif
+Travail sur le site et mise en forme de la partie HTML.

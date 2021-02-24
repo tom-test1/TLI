@@ -1,5 +1,5 @@
 body {
-  background-color: lightblue;
+  background-color: rgb(255, 255, 255);
 }
 
 h1 {
@@ -39,5 +39,12 @@ p {
   background-color: #ddd; /*fond en blanc-gris*/
   color: black;		  /*écriture en noir-gris*/
 }
+
+.formulaire {
+  text-align: center;
+  background-color: rgb(192, 187, 187);
+  padding: 10px 50px; 
+}
+
 
 
