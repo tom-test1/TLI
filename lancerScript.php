@@ -23,6 +23,8 @@
 
     <a href=./page2.html>Gestion de compte utilisateur</a>
 
+    <a href=./page3.html>Liste de toutes les pathologies 2</a>
+
 </div>
 
 
@@ -64,8 +66,11 @@ $url_components = parse_url($url);
 parse_str($url_components['query'], $params); 
       
 // Display result 
-echo 'Le param 1 est : '.$params['param1'].', le 2eme est : '.$params['param2']; 
-echo ' Le param 3 est : '.$params['mot_clef'].''; 
+echo 'recherche effectuée avec :<br /><br />';
+echo 'Pathologie : '.$params['patho'].'<br />';
+echo 'Symptome : '.$params['symptome'].'<br />';
+echo 'Mot clef : '.$params['mot_clef'].'<br />'; 
+
 echo "<br />\n<br />\n";
 
 

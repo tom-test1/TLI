@@ -28,41 +28,63 @@
 
 </div>
 
-
-<p>salut a tousse les zamis </p>
+<h3>Recherche des Pathologies : </h3>
+</br>
 
 <form action="./lancerScript.php">
 
-
-    <select name="param1">
-        <option value="keysympt">keysympt</option>
-        <option value="keysympt">keywords</option>
-        <option value="p">peut etre</option>
-    </select>
-
-
-    <select name ="param2">
-        <optgroup label="maladie RGB">
-            <option value="1">Maladie rouge</option>
-            <option value="2">Maladie bleu</option>
-            <option value="3">Maladie orange fluo</option>
-        </optgroup>
-        <optgroup label="maladie autres">
-            <option value="4">Maladie rx</option>
-            <option value="5">Maladie y</option>
-            <option value="6">Maladie z fluo</option>
-        </optgroup>
-    </select>
-
-    </br>
-    </br>
-    
-    <p>Pathologie recherchée :
-    <input type="text" placeholder="Entrez vos mots-clefs" id="mot_clef" name="mot_clef">
+    <p>
+        Symptômes : 
+        <select name="symptome">
+            <option value="none" selected>Aucun</option>
+            <option value="asthenie">Asthénie</option>
+            <option value="baillements">Bâillements</option>
+            <option value="cardialgie">Cardialgie</option>
+            <option value="coliques">Coliques</option>
+            <option value="cystite">Cystite</option>
+        </select>
     </p>
 
-    <br>
-    <br>
+    <p>
+        Pathologie : 
+        <select name ="patho">
+            <option value="none" selected>Aucun</option>
+            <optgroup label="P">
+                <option value="Pme">méridien du poumon externe</option>
+                <option value="Pmi">méridien du poumon interne</option>
+                <option value="Plp">méridien du poumon externe</option>
+                <option value="Plv">méridien du poumon interne</option>
+            </optgroup>
+            <optgroup label="GI">
+                <option value="GIme">méridien du gros intestin externe</option>
+                <option value="GImi">méridien du gros intestin interne</option>
+            </optgroup>
+            <optgroup label="E">
+                <option value="Elp">voie luo de l'estomac pleine</option>
+                <option value="Elv">voie luo de l'estomac vide</option>
+            </optgroup>
+            <optgroup label="Rte">
+                <option value="Rtetfpc">zang rate plein et chaud</option>
+                <option value="Rtetfvf">zang rate vide et froid</option>
+            </optgroup>
+        </select>
+    </p>
+
+    <p>
+        Mot-clef : 
+        <select name="mot_clef">
+            <option value="none" selected>Aucun</option>
+            <option value="aisselle">aisselle</option>
+            <option value="anxiété">anxiété</option>
+            <option value="auriculaire">auriculaire</option>
+            <option value="borborygmes">borborygmes</option>
+            <option value="cervicalgie">cervicalgie</option>
+        </select>
+    </p>
+
+
+
+    </br>
 
     <input type="submit" value="ENVOYER VERS LA BASE DE DONNEEEEES">
 
