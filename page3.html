@@ -14,21 +14,59 @@
 
 <h1>Site de l'Association des Acupuncteurs soucieux de l'Accessibilité</h1>
 
-<h2>(AAAd)</h2>
+<h2>(AAAc)</h2>
 
 <div class="menuDuHaut">
 
     <a href=./index.html>Accueil</a>
 
-    <a href=./page1.html>lien1</a>
+    <a href=./page1.html>Liste de toutes les pathologies</a>
 
-    <a href=./page2.html>lien2 tesst</a>
+    <a href=./page2.html>Gestion de compte utilisateur</a>
 
-    <a href=./page3.html>lien3 maggfdddgfdgfdgfdgfdgle</a>
+    <a href=./page3.html>Liste de toutes les pathologies 2</a>
 
 </div>
 
 
+<p>salut a tousse les zamis </p>
+
+<form action="./lancerScript.php">
+
+
+    <select name="param1">
+        <option value="keysympt">keysympt</option>
+        <option value="keysympt">keywords</option>
+        <option value="p">peut etre</option>
+    </select>
+
+
+    <select name ="param2">
+        <optgroup label="maladie RGB">
+            <option value="1">Maladie rouge</option>
+            <option value="2">Maladie bleu</option>
+            <option value="3">Maladie orange fluo</option>
+        </optgroup>
+        <optgroup label="maladie autres">
+            <option value="4">Maladie rx</option>
+            <option value="5">Maladie y</option>
+            <option value="6">Maladie z fluo</option>
+        </optgroup>
+    </select>
+
+    </br>
+    </br>
+    
+    <p>Pathologie recherchée :
+    <input type="text" placeholder="Entrez vos mots-clefs" id="mot_clef" name="mot_clef">
+    </p>
+
+    <br>
+    <br>
+
+    <input type="submit" value="ENVOYER VERS LA BASE DE DONNEEEEES">
+
+</form>
 
 
 </body>

@@ -24,6 +24,8 @@
 
     <a href=./page2.html>Gestion de compte utilisateur</a>
 
+    <a href=./page3.html>Liste de toutes les pathologies 2</a>
+
 </div>
 
 
@@ -31,12 +33,13 @@
 
 <form action="./lancerScript.php">
 
-    <select name="param1">
-        <option value="oui">oui</option>
-        <option value="non">non</option>
-        <option value="p">peut etre</option>
 
+    <select name="param1">
+        <option value="keysympt">keysympt</option>
+        <option value="keysympt">keywords</option>
+        <option value="p">peut etre</option>
     </select>
+
 
     <select name ="param2">
         <optgroup label="maladie RGB">
@@ -49,9 +52,18 @@
             <option value="5">Maladie y</option>
             <option value="6">Maladie z fluo</option>
         </optgroup>
-
     </select>
-    <br><br>
+
+    </br>
+    </br>
+    
+    <p>Pathologie recherchée :
+    <input type="text" placeholder="Entrez vos mots-clefs" id="mot_clef" name="mot_clef">
+    </p>
+
+    <br>
+    <br>
+
     <input type="submit" value="ENVOYER VERS LA BASE DE DONNEEEEES">
 
 </form>

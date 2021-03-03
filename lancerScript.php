@@ -1,3 +1,40 @@
+<!DOCTYPE html>
+
+<html lang="fr-FR">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" href="icone.png" />
+  <title>Association des acupuncteurs</title>
+  <link rel="stylesheet" href="indexcss.css">
+</head>
+
+<body>
+
+
+<h1>Site de l'Association des Acupuncteurs soucieux de l'Accessibilité</h1>
+<h2>(AAA)</h2>
+
+<div class="menuDuHaut">
+
+    <a href=./index.html>Accueil</a>
+
+    <a href=./page1.html>Liste de toutes les pathologies</a>
+
+    <a href=./page2.html>Gestion de compte utilisateur</a>
+
+</div>
+
+
+
+</body>
+</html>
+
+
+
+
+
+
 <?php
 $conn = new PDO('pgsql:host=localhost;port=5432;dbname=acudb','postgres-tli','tli');
 
@@ -28,7 +65,9 @@ parse_str($url_components['query'], $params);
       
 // Display result 
 echo 'Le param 1 est : '.$params['param1'].', le 2eme est : '.$params['param2']; 
+echo ' Le param 3 est : '.$params['mot_clef'].''; 
 echo "<br />\n<br />\n";
+
 
 
 
@@ -45,5 +84,4 @@ $result= $sth->fetchAll();
 
 
 print_r($result);
-print_r($param1);
 
