@@ -18,8 +18,8 @@ p {
 
 /* Style des liens de la barre de navigation */
 .menuDuHaut a {
-  float: left;
-  display: block;
+  /*float: left;
+  display: block;*/
   color: #f2f2f2;
   text-align: center;	
   padding: 10px 50px;    /*espacement (haut+bas puis droite+gauche*/
@@ -28,6 +28,8 @@ p {
 
 /* Style de la barre de navigation */
 .menuDuHaut {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
   overflow: hidden; /*avoir la barre du menu jusqu'au bout*/
   background-color: #333; /*gris-noir*/
   width: 100%;
