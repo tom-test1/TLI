@@ -1,47 +1,11 @@
-<!DOCTYPE html>
-
-<html lang="fr-FR">
-
-<head>
-  <meta charset="UTF-8">
-  <link rel="shortcut icon" href="icone.png" />
-  <title>Association des acupuncteurs</title>
-  <link rel="stylesheet" href="indexcss.css">
-</head>
-
-<body>
-
-
-<h1>Site de l'Association des Acupuncteurs soucieux de l'Accessibilité</h1>
-<h2>(AAA)</h2>
-
-<div class="menuDuHaut">
-
-    <a href=./index.html>Accueil</a>
-
-    <a href=./page1.html>Liste de toutes les pathologies</a>
-
-    <a href=./page2.html>Gestion de compte utilisateur</a>
-
-    <a href=./page3.html>Liste de toutes les pathologies 2</a>
-
-</div>
-
-
-
-</body>
-</html>
-
-
-
-
-
-
 <?php
-$conn = new PDO('pgsql:host=localhost;port=5432;dbname=acudb','postgres-tli','tli');
+require_once('./smarty/libs/Smarty.class.php');
+$smarty = new Smarty();
+$smarty->setTemplateDir('/var/www/html/TLI/templates');
+$smarty->setCompileDir('/var/www/html/TLI/templates_c/');
+$smarty->setCacheDir('/var/www/html/TLI/cache/');
 
-print("Cette page fonctionne correctement\n");
-echo "<br />\n<br />\n";
+$conn = new PDO('pgsql:host=localhost;port=5432;dbname=acudb','postgres-tli','tli');
 
 // ____LE SCRIPT CI DESSOUS SERT A RECUPERER LES PARAMETRES DE L URL_____
 if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')   
@@ -130,6 +94,8 @@ foreach ($result as $row) {
     print "<br>";
 }  
 
+$smarty->assign('result',$result);
+$smarty->display('lancerScript.tpl');
 
 print_r($result);
 
