@@ -71,17 +71,24 @@ $sth = $conn->prepare($testt);
 echo '<br>';
 
 echo 'Test 2 : <br>';
+
 $sth = $conn->prepare("SELECT * FROM keywords 
 INNER JOIN keysympt ON keywords.idk = keysympt.idk 
 INNER JOIN symptome ON symptome.ids = keysympt.ids 
-/*INNER JOIN symptpatho ON symptpatho.ids = symptome.ids*/
+INNER JOIN symptpatho ON symptpatho.ids = symptome.ids
 INNER JOIN patho ON patho.idp = symptpatho.idp 
-INNER JOIN meridien ON meridien.code = patho.mer WHERE keywords.name = 'anxiété' ");
+INNER JOIN meridien ON meridien.code = patho.mer WHERE patho.type = :patho");
+
+//$sth->bindParam(':mot_clef',$mot_clef,PDO::PARAM_STR);
+$sth->bindParam(':patho',$patho,PDO::PARAM_STR);
+/*$sth->bindParam(':symptome',$symptome,PDO::PARAM_STR);
+$sth->bindParam(':meridien',$meridien,PDO::PARAM_STR);*/
+
 
 echo 'Test 3 : <br>';
 var_dump('anxiété');
 echo '<br>';
-var_dump($mot_clef);
+var_dump($patho);
 echo '<br>';
 echo '<br>';
 
