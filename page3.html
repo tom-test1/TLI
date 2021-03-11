@@ -29,39 +29,37 @@
 </div>
 
 
-<p>salut a tousse les zamis </p>
 
 <form action="./lancerScript.php">
 
 
-    <select name="param1">
-        <option value="keysympt">keysympt</option>
-        <option value="keysympt">keywords</option>
-        <option value="p">peut etre</option>
-    </select>
-
-
-    <select name ="param2">
-        <optgroup label="maladie RGB">
-            <option value="1">Maladie rouge</option>
-            <option value="2">Maladie bleu</option>
-            <option value="3">Maladie orange fluo</option>
-        </optgroup>
-        <optgroup label="maladie autres">
-            <option value="4">Maladie rx</option>
-            <option value="5">Maladie y</option>
-            <option value="6">Maladie z fluo</option>
-        </optgroup>
-    </select>
-
     </br>
-    </br>
-    
-    <p>Pathologie recherchée :
-    <input type="text" placeholder="Entrez vos mots-clefs" id="mot_clef" name="mot_clef">
+    <p> Remplissez au moins un des champs suivants :</p>
+    <br>
+
+    <p>Mots-clefs :
+        <input type="text" placeholder="Ex : Poumons" id="mot_clef" name="mot_clef">
     </p>
 
+    <p>Symptômes :
+        <input type="text" placeholder="Ex : Baîllements" id="symptome" name="symptome">
+    </p>
+
+    <p>Pathologie :
+    <input type="text" placeholder="Ex : voie luo de la rate vide" id="patho" name="patho">
+    </p>
+
+    <p>Méridiens :
+        <input type="text" placeholder="Ex : Chong Mai" id="meridien" name="meridien">
+    </p>
+
+
     <br>
+
+
+
+
+
     <br>
 
     <input type="submit" value="ENVOYER VERS LA BASE DE DONNEEEEES">

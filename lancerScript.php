@@ -34,77 +34,39 @@ $patho = $params['patho'];
 $symptome = $params['symptome'];
 $meridien = $params['meridien'];
 
+$LIKEmot_clef = "%".$mot_clef."%";
+$LIKEpatho = "%".$patho."%";
+$LIKEsymptome = "%".$symptome."%";
+$LIKEmeridien = "%".$meridien."%";
 
 
-// Display result 
-echo 'recherche effectuée avec :<br /><br />';
-echo 'Mot clef : '.$mot_clef.'<br />'; 
-echo 'Pathologie : '.$patho.'<br />';
-echo 'Symptome : '.$symptome.'<br />';
-echo 'Meridien : '.$meridien.'<br />'; 
-
-
-echo "<br /><br />";
-
-
-
-
-
-/* include sur une page html pour recuperer les données*/
-
-if ($params['meridien'] != "none")
-    echo "test" ;
-    echo" <br>" ;
-
-//   celle-ci fonctionne :
-/*$sth = $conn->prepare("SELECT * FROM keywords 
-INNER JOIN keysympt ON keywords.idk = keysympt.idk 
-INNER JOIN symptome ON symptome.ids = keysympt.ids 
-INNER JOIN symptpatho ON symptpatho.idse = symptome.ids 
-INNER JOIN patho ON patho.idp = symptpatho.idp 
-INNER JOIN meridien ON meridien.code = patho.mer WHERE nom = 'Poumon'");
-*/
-
-echo 'Test 1 : <br>';
-$testt= "SELECT * FROM keywords ";
-$sth = $conn->prepare($testt);
-echo '<br>';
-
-echo 'Test 2 : <br>';
-
+// REQUETE SQL
 $sth = $conn->prepare("SELECT * FROM keywords 
 INNER JOIN keysympt ON keywords.idk = keysympt.idk 
 INNER JOIN symptome ON symptome.ids = keysympt.ids 
 INNER JOIN symptpatho ON symptpatho.ids = symptome.ids
 INNER JOIN patho ON patho.idp = symptpatho.idp 
-INNER JOIN meridien ON meridien.code = patho.mer WHERE patho.type = :patho");
+INNER JOIN meridien ON meridien.code = patho.mer 
+WHERE keywords.name LIKE :mot_clef 
+AND patho.desc LIKE :patho 
+AND symptome.desc LIKE :symptome 
+AND meridien.nom LIKE :meridien");
 
-//$sth->bindParam(':mot_clef',$mot_clef,PDO::PARAM_STR);
-$sth->bindParam(':patho',$patho,PDO::PARAM_STR);
-/*$sth->bindParam(':symptome',$symptome,PDO::PARAM_STR);
-$sth->bindParam(':meridien',$meridien,PDO::PARAM_STR);*/
+//REMPLACEMENT VARIABLE (++securité)
+$sth->bindParam(':mot_clef',$LIKEmot_clef ,PDO::PARAM_STR);
+$sth->bindParam(':patho',   $LIKEpatho    ,PDO::PARAM_STR);
+$sth->bindParam(':symptome',$LIKEsymptome ,PDO::PARAM_STR);
+$sth->bindParam(':meridien',$LIKEmeridien ,PDO::PARAM_STR);
 
-
-echo 'Test 3 : <br>';
-var_dump('anxiété');
-echo '<br>';
-var_dump($patho);
-echo '<br>';
-echo '<br>';
-
-//$sth = $conn->prepare("SELECT * FROM keywords WHERE name = 'absence'");
-
+//LANCER LA REQUETE SQL
 $sth-> execute();
 
+//facon d'affichger le resultat
 //$result= $sth->fetchAll(PDO::FETCH_NUM);
 $result= $sth->fetchAll(PDO::FETCH_ASSOC);
 
 
-print "name   |  ids  | <br><br>";
- 
-
-
-
+/*
 foreach ($result as $row) {
     foreach ($row as $col=>$val) {
         $g = gettype($val);
@@ -114,11 +76,9 @@ foreach ($result as $row) {
     }
     print "<br>";
 }  
+*/
 
 $smarty->assign('result',$result);
 $smarty->display('lancerScript.tpl');
-
-print_r($result);
-
 
 
