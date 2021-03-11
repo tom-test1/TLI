@@ -28,6 +28,7 @@
 </div>
 <div class = tableau>
   <table>
+  <caption>Recherche effectuée avec les mots suivants</caption>
     <tr>
     <th>Mot-clef</th>
     <th>Patho</th>
@@ -47,18 +48,18 @@
 
 <div class ="tableau">
   <table>
-    <caption>La table issue du tableau SQL</caption>
+    <caption>Résultat de recherche</caption>
     <tr>
       <th>idk</th>
-      <th>name</th>
+      <th>Mot-clef</th>
       <th>ids</th>
-      <th>desc</th>
+      <th>Patho</th>
       <th>idp</th>
       <th>aggr</th>
       <th>mer</th>
       <th>type</th>
       <th>code</th>
-      <th>nom</th>
+      <th>Meridien</th>
       <th>element</th>
       <th>yin</th>
     </tr>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-03-11 11:56:06
+/* Smarty version 3.1.39, created on 2021-03-11 12:06:20
   from '/var/www/html/TLI/templates/lancerScript.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6049f7465655e2_42454946',
+  'unifunc' => 'content_6049f9acab9e72_49794794',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ce4fd99a93e96cb51ebb6bcee45be6f91d97fc86' => 
     array (
       0 => '/var/www/html/TLI/templates/lancerScript.tpl',
-      1 => 1615460163,
+      1 => 1615460778,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6049f7465655e2_42454946 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6049f9acab9e72_49794794 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 
 <html lang="fr-FR">
@@ -51,6 +51,7 @@ function content_6049f7465655e2_42454946 (Smarty_Internal_Template $_smarty_tpl)
 </div>
 <div class = tableau>
   <table>
+  <caption>Recherche effectuée avec les mots suivants</caption>
     <tr>
     <th>Mot-clef</th>
     <th>Patho</th>
@@ -74,18 +75,18 @@ function content_6049f7465655e2_42454946 (Smarty_Internal_Template $_smarty_tpl)
 
 <div class ="tableau">
   <table>
-    <caption>La table issue du tableau SQL</caption>
+    <caption>Résultat de recherche</caption>
     <tr>
       <th>idk</th>
-      <th>name</th>
+      <th>Mot-clef</th>
       <th>ids</th>
-      <th>desc</th>
+      <th>Patho</th>
       <th>idp</th>
       <th>aggr</th>
       <th>mer</th>
       <th>type</th>
       <th>code</th>
-      <th>nom</th>
+      <th>Meridien</th>
       <th>element</th>
       <th>yin</th>
     </tr>
