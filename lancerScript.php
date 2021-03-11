@@ -34,6 +34,8 @@ $patho = $params['patho'];
 $symptome = $params['symptome'];
 $meridien = $params['meridien'];
 
+
+
 // Display result 
 echo 'recherche effectuée avec :<br /><br />';
 echo 'Mot clef : '.$mot_clef.'<br />'; 
@@ -63,13 +65,25 @@ INNER JOIN patho ON patho.idp = symptpatho.idp
 INNER JOIN meridien ON meridien.code = patho.mer WHERE nom = 'Poumon'");
 */
 
+echo 'Test 1 : <br>';
+$testt= "SELECT * FROM keywords ";
+$sth = $conn->prepare($testt);
+echo '<br>';
+
+echo 'Test 2 : <br>';
 $sth = $conn->prepare("SELECT * FROM keywords 
 INNER JOIN keysympt ON keywords.idk = keysympt.idk 
 INNER JOIN symptome ON symptome.ids = keysympt.ids 
 INNER JOIN symptpatho ON symptpatho.ids = symptome.ids 
 INNER JOIN patho ON patho.idp = symptpatho.idp 
-INNER JOIN meridien ON meridien.code = patho.mer WHERE keywords.name = 'absence' ");
+INNER JOIN meridien ON meridien.code = patho.mer WHERE keywords.name = 'anxiété' ");
 
+echo 'Test 3 : <br>';
+var_dump('anxiété');
+echo '<br>';
+var_dump($mot_clef);
+echo '<br>';
+echo '<br>';
 
 //$sth = $conn->prepare("SELECT * FROM keywords WHERE name = 'absence'");
 
