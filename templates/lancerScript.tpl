@@ -26,14 +26,33 @@
     <a href=./page3.html>Liste de toutes les pathologies 2</a>
 
 </div>
-<ul>
-{foreach from = $result item = row}
-{foreach from = $row item = col}
-<li>{$col  }</li>
-{/foreach}
-</br>
-{/foreach}
-</ul>
+<table>
+  <tr>
+    <th>idk</th>
+    <th>name</th>
+    <th>ids</th>
+    <th>desc</th>
+    <th>idp</th>
+    <th>aggr</th>
+    <th>mer</th>
+    <th>type</th>
+    <th>code</th>
+    <th>nom</th>
+    <th>element</th>
+    <th>yin</th>
+  </tr>
+
+  <tr>
+  {foreach from = $result item = row}
+    {foreach from = $row item = i name = col}
+      {if $smarty.foreach.col.index % 12 == 0}
+        </tr><tr>
+      {/if}
+      <td>{$i}</td>
+    {/foreach}
+  {/foreach}
+  </tr>
+</table>
 
 </body>
 </html>
