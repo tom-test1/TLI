@@ -29,19 +29,76 @@ $url_components = parse_url($url);
 // string passed via URL 
 parse_str($url_components['query'], $params); 
 
+
 $mot_clef = $params['mot_clef'];
 $patho = $params['patho'];
 $symptome = $params['symptome'];
 $meridien = $params['meridien'];
+$indexTab = "";
 
 $LIKEmot_clef = "%".$mot_clef."%";
 $LIKEpatho = "%".$patho."%";
 $LIKEsymptome = "%".$symptome."%";
 $LIKEmeridien = "%".$meridien."%";
 
+if (isset($params['keywords_idk'])){
+    $indexTab = $indexTab."idk;";
+}
+
+if (isset($params['keywords_name'])){
+    $indexTab = $indexTab."mot-clef;";
+}
+
+if (isset($params['keySympt_ids'])){
+    $indexTab = $indexTab."ids;";
+}
+
+if (isset($params['symptome_desc'])){
+    $indexTab = $indexTab."symptome;";
+}
+
+if (isset($params['symptPatho_idp'])){
+    $indexTab = $indexTab."idp;";
+}
+
+if (isset($params['symptPatho_aggr'])){
+    $indexTab = $indexTab."aggr;";
+}
+
+if (isset($params['patho_mer'])){
+    $indexTab = $indexTab."patho mer;";
+}
+
+if (isset($params['patho_type'])){
+    $indexTab = $indexTab."type;";
+}
+
+if (isset($params['patho_desc'])){
+    $indexTab = $indexTab."patho;";
+}
+
+if (isset($params['meridien_nom'])){
+    $indexTab = $indexTab."nom meridien;";
+}
+
+if (isset($params['meridien_element'])){
+    $indexTab = $indexTab."element;";
+}
+
+if (isset($params['meridien_yin'] )){
+    $indexTab = $indexTab."yin;";
+}
+
+
+// test pour clément :
+echo '$indexTab = ';
+echo $indexTab;
+
 
 // REQUETE SQL
-$sth = $conn->prepare("SELECT * FROM keywords 
+$sth = $conn->prepare("SELECT keywords.idk, keywords.name, symptome.ids, symptome.desc, symptpatho.idp, symptpatho.aggr,
+patho.mer, patho.type, patho.desc, meridien.nom, meridien.element, meridien.yin
+FROM keywords 
 INNER JOIN keysympt ON keywords.idk = keysympt.idk 
 INNER JOIN symptome ON symptome.ids = keysympt.ids 
 INNER JOIN symptpatho ON symptpatho.ids = symptome.ids
@@ -62,8 +119,8 @@ $sth->bindParam(':meridien',$LIKEmeridien ,PDO::PARAM_STR);
 $sth-> execute();
 
 //facon d'affichger le resultat
-//$result= $sth->fetchAll(PDO::FETCH_NUM);
-$result= $sth->fetchAll(PDO::FETCH_ASSOC);
+$result= $sth->fetchAll(PDO::FETCH_NUM);
+//$result= $sth->fetchAll(PDO::FETCH_ASSOC);
 
 
 /*

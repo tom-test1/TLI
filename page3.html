@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-
 <html lang="fr-FR">
 
 <head>
@@ -14,11 +12,11 @@
 
 <h1>Site de l'Association des Acupuncteurs soucieux de l'Accessibilité</h1>
 
-<h2>(AAA)</h2>
+<h2>(AAAb)</h2>
 
 <div class="menuDuHaut">
 
-  <a href=./index.html>Accueil</a>
+    <a href=./index.html>Accueil</a>
 
     <a href=./page1.html>Liste de toutes les pathologies</a>
 
@@ -28,39 +26,75 @@
 
 </div>
 
-
+<h3>Recherche des Pathologies : </h3>
+</br>
 
 <form action="./lancerScript.php">
 
+    <p>
+        Mot-clef : 
+        <select name="mot_clef">
+            <option value="none" selected>Aucun</option>
+            <option value="aisselle">aisselle</option>
+            <option value="anxiété">anxiété</option>
+            <option value="auriculaire">auriculaire</option>
+            <option value="borborygmes">borborygmes</option>
+            <option value="cervicalgie">cervicalgie</option>
+        </select>
+    </p>
+
+    <p>
+        Symptômes : 
+        <select name="symptome">
+            <option value="none" selected>Aucun</option>
+            <option value="asthenie">Asthénie</option>
+            <option value="baillements">Bâillements</option>
+            <option value="cardialgie">Cardialgie</option>
+            <option value="coliques">Coliques</option>
+            <option value="cystite">Cystite</option>
+        </select>
+    </p>
+
+    <p>
+        Pathologie : 
+        <select name ="patho">
+            <option value="none" selected>Aucun</option>
+            <optgroup label="P">
+                <option value="me">méridien du poumon externe</option>
+                <option value="mi">méridien du poumon interne</option>
+                <option value="p">méridien du poumon externe</option>
+                <option value="v">méridien du poumon interne</option>
+            </optgroup>
+            <optgroup label="GI">
+                <option value="me">méridien du gros intestin externe</option>
+                <option value="mi">méridien du gros intestin interne</option>
+            </optgroup>
+            <optgroup label="E">
+                <option value="lp">voie luo de l'estomac pleine</option>
+                <option value="lv">voie luo de l'estomac vide</option>
+            </optgroup>
+            <optgroup label="te">
+                <option value="tfpc">zang rate plein et chaud</option>
+                <option value="tfvf">zang rate vide et froid</option>
+            </optgroup>
+        </select>
+    </p>
+
+
+    <p>
+        Meridien : 
+        <select name="meridien">
+            <option value="none" selected>Aucun</option>
+            <option value="coeur">Coeur</option>
+            <option value="estomac">Estomac</option>
+            <option value="rein">Rein</option>
+        </select>
+    </p>
+    
+
+
 
     </br>
-    <p> Remplissez au moins un des champs suivants :</p>
-    <br>
-
-    <p>Mots-clefs :
-        <input type="text" placeholder="Ex : Poumons" id="mot_clef" name="mot_clef">
-    </p>
-
-    <p>Symptômes :
-        <input type="text" placeholder="Ex : Baîllements" id="symptome" name="symptome">
-    </p>
-
-    <p>Pathologie :
-    <input type="text" placeholder="Ex : voie luo de la rate vide" id="patho" name="patho">
-    </p>
-
-    <p>Méridiens :
-        <input type="text" placeholder="Ex : Chong Mai" id="meridien" name="meridien">
-    </p>
-
-
-    <br>
-
-
-
-
-
-    <br>
 
     <input type="submit" value="ENVOYER VERS LA BASE DE DONNEEEEES">
 
