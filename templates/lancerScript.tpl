@@ -26,33 +26,44 @@
     <a href=./page3.html>Liste de toutes les pathologies 2</a>
 
 </div>
-<table>
-  <tr>
-    <th>idk</th>
-    <th>name</th>
-    <th>ids</th>
-    <th>desc</th>
-    <th>idp</th>
-    <th>aggr</th>
-    <th>mer</th>
-    <th>type</th>
-    <th>code</th>
-    <th>nom</th>
-    <th>element</th>
-    <th>yin</th>
-  </tr>
+<div class ="tableau">
+  <table>
+    <caption>La table issue du tableau SQL</caption>
+    <tr>
+      <th>idk</th>
+      <th>name</th>
+      <th>ids</th>
+      <th>desc</th>
+      <th>idp</th>
+      <th>aggr</th>
+      <th>mer</th>
+      <th>type</th>
+      <th>code</th>
+      <th>nom</th>
+      <th>element</th>
+      <th>yin</th>
+    </tr>
 
-  <tr>
-  {foreach from = $result item = row}
-    {foreach from = $row item = i name = col}
-      {if $smarty.foreach.col.index % 12 == 0}
-        </tr><tr>
-      {/if}
-      <td>{$i}</td>
+    <tr>
+    {foreach from = $result item = row}
+      {foreach from = $row item = i name = col}
+        {if $smarty.foreach.col.index % 12 == 0}
+          </tr><tr>
+        {/if}
+        {if gettype($i) == "boolean"}
+            {if $i == 1}
+              <td>Vrai</td>
+            {else}
+              <td>Faux</td>
+            {/if}
+        {else}
+          <td>{$i}</td> 
+        {/if}
+      {/foreach}
     {/foreach}
-  {/foreach}
-  </tr>
-</table>
+    </tr>
+  </table>
+</body>
 
 </body>
 </html>
