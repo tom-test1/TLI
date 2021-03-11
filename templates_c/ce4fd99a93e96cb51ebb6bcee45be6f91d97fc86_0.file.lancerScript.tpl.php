@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-03-03 18:18:14
+/* Smarty version 3.1.39, created on 2021-03-11 09:03:20
   from '/var/www/html/TLI/templates/lancerScript.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_603fc4d6d70849_59232812',
+  'unifunc' => 'content_6049cec84dd431_64301296',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ce4fd99a93e96cb51ebb6bcee45be6f91d97fc86' => 
     array (
       0 => '/var/www/html/TLI/templates/lancerScript.tpl',
-      1 => 1614790258,
+      1 => 1615449798,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_603fc4d6d70849_59232812 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6049cec84dd431_64301296 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 
 <html lang="fr-FR">
@@ -49,27 +49,51 @@ function content_603fc4d6d70849_59232812 (Smarty_Internal_Template $_smarty_tpl)
     <a href=./page3.html>Liste de toutes les pathologies 2</a>
 
 </div>
-<ul>
-<?php
+<table>
+  <tr>
+    <th>idk</th>
+    <th>name</th>
+    <th>ids</th>
+    <th>desc</th>
+    <th>idp</th>
+    <th>aggr</th>
+    <th>mer</th>
+    <th>type</th>
+    <th>code</th>
+    <th>nom</th>
+    <th>element</th>
+    <th>yin</th>
+  </tr>
+
+  <tr>
+  <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['result']->value, 'row');
 $_smarty_tpl->tpl_vars['row']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['row']->value) {
 $_smarty_tpl->tpl_vars['row']->do_else = false;
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['row']->value, 'col');
-$_smarty_tpl->tpl_vars['col']->do_else = true;
-if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['col']->value) {
-$_smarty_tpl->tpl_vars['col']->do_else = false;
 ?>
-<li><?php echo $_smarty_tpl->tpl_vars['col']->value;?>
-</li>
-<?php
+    <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['row']->value, 'i', false, NULL, 'col', array (
+  'index' => true,
+));
+$_smarty_tpl->tpl_vars['i']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['i']->value) {
+$_smarty_tpl->tpl_vars['i']->do_else = false;
+$_smarty_tpl->tpl_vars['__smarty_foreach_col']->value['index']++;
+?>
+      <?php if ((isset($_smarty_tpl->tpl_vars['__smarty_foreach_col']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_foreach_col']->value['index'] : null)%12 == 0) {?>
+        </tr><tr>
+      <?php }?>
+      <td><?php echo $_smarty_tpl->tpl_vars['i']->value;?>
+</td>
+    <?php
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
-</br>
-<?php
+  <?php
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
-</ul>
+  </tr>
+</table>
 
 </body>
 </html><?php }

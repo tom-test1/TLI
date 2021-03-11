@@ -74,7 +74,7 @@ echo 'Test 2 : <br>';
 $sth = $conn->prepare("SELECT * FROM keywords 
 INNER JOIN keysympt ON keywords.idk = keysympt.idk 
 INNER JOIN symptome ON symptome.ids = keysympt.ids 
-INNER JOIN symptpatho ON symptpatho.ids = symptome.ids 
+/*INNER JOIN symptpatho ON symptpatho.ids = symptome.ids*/
 INNER JOIN patho ON patho.idp = symptpatho.idp 
 INNER JOIN meridien ON meridien.code = patho.mer WHERE keywords.name = 'anxiété' ");
 
