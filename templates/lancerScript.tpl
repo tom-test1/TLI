@@ -13,7 +13,7 @@
 
 
 <h1>Site de l'Association des Acupuncteurs soucieux de l'Accessibilité</h1>
-<h2>(AAA) Test </h2>
+<h2>(AAA)</h2>
 
 <div class="menuDuHaut">
 
@@ -26,6 +26,29 @@
     <a href=./page3.html>Liste de toutes les pathologies 2</a>
 
 </div>
+<div class = tableau>
+  <table>
+    <tr>
+    <td>Mot-clef</td>
+    <td>{$mot_clef}</td>
+    </tr>
+    <tr>
+    <td>Patho</td>
+    <td>{$patho}</td>
+    </tr>
+    <tr>
+    <td>Symptôme</td>
+    <td>{$symptome}</td>
+    </tr>
+    <tr>
+    <td>Méridien</td>
+    <td>{$meridien}</td>
+    </tr>
+  </table>
+</div>
+<div class="checkbox">
+</div>
+
 <div class ="tableau">
   <table>
     <caption>La table issue du tableau SQL</caption>
@@ -44,12 +67,10 @@
       <th>yin</th>
     </tr>
 
-    <tr>
+    
     {foreach from = $result item = row}
+      <tr>
       {foreach from = $row item = i name = col}
-        {if $smarty.foreach.col.index % 12 == 0}
-          </tr><tr>
-        {/if}
         {if gettype($i) == "boolean"}
             {if $i == 1}
               <td>Vrai</td>
@@ -60,9 +81,11 @@
           <td>{$i}</td> 
         {/if}
       {/foreach}
+      </tr>
     {/foreach}
-    </tr>
+    
   </table>
+</div>
 </body>
 
 </body>

@@ -97,6 +97,10 @@ foreach ($result as $row) {
 
 
 $smarty->assign('result',$result);
+$smarty->assign('mot_clef',$mot_clef);
+$smarty->assign('patho',$patho);
+$smarty->assign('symptome',$symptome);
+$smarty->assign('meridien',$meridien);
 $smarty->display('lancerScript.tpl');
 
 print_r($result);
