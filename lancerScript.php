@@ -75,10 +75,10 @@ foreach ($result as $row) {
         print " $col  : $val ; $g |";
     }
     print "<br>";
-}  
+}
 */
+
 
 $smarty->assign('result',$result);
 $smarty->display('lancerScript.tpl');
-
 
