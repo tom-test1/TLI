@@ -29,19 +29,15 @@
 <div class = tableau>
   <table>
     <tr>
-    <td>Mot-clef</td>
+    <th>Mot-clef</th>
+    <th>Patho</th>
+    <th>Symptôme</th>
+    <th>Méridien</th>
+    </tr>
+    <tr>
     <td>{$mot_clef}</td>
-    </tr>
-    <tr>
-    <td>Patho</td>
     <td>{$patho}</td>
-    </tr>
-    <tr>
-    <td>Symptôme</td>
     <td>{$symptome}</td>
-    </tr>
-    <tr>
-    <td>Méridien</td>
     <td>{$meridien}</td>
     </tr>
   </table>

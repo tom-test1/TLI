@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-03-11 11:51:40
+/* Smarty version 3.1.39, created on 2021-03-11 11:56:06
   from '/var/www/html/TLI/templates/lancerScript.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6049f63c88c206_24896265',
+  'unifunc' => 'content_6049f7465655e2_42454946',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ce4fd99a93e96cb51ebb6bcee45be6f91d97fc86' => 
     array (
       0 => '/var/www/html/TLI/templates/lancerScript.tpl',
-      1 => 1615459898,
+      1 => 1615460163,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6049f63c88c206_24896265 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6049f7465655e2_42454946 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 
 <html lang="fr-FR">
@@ -52,22 +52,18 @@ function content_6049f63c88c206_24896265 (Smarty_Internal_Template $_smarty_tpl)
 <div class = tableau>
   <table>
     <tr>
-    <td>Mot-clef</td>
+    <th>Mot-clef</th>
+    <th>Patho</th>
+    <th>Symptôme</th>
+    <th>Méridien</th>
+    </tr>
+    <tr>
     <td><?php echo $_smarty_tpl->tpl_vars['mot_clef']->value;?>
 </td>
-    </tr>
-    <tr>
-    <td>Patho</td>
     <td><?php echo $_smarty_tpl->tpl_vars['patho']->value;?>
 </td>
-    </tr>
-    <tr>
-    <td>Symptôme</td>
     <td><?php echo $_smarty_tpl->tpl_vars['symptome']->value;?>
 </td>
-    </tr>
-    <tr>
-    <td>Méridien</td>
     <td><?php echo $_smarty_tpl->tpl_vars['meridien']->value;?>
 </td>
     </tr>
