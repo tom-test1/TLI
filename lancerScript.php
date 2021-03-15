@@ -34,68 +34,92 @@ $mot_clef = $params['mot_clef'];
 $patho = $params['patho'];
 $symptome = $params['symptome'];
 $meridien = $params['meridien'];
-$indexTab = "";
+$indexArray = array ();
 
 $LIKEmot_clef = "%".$mot_clef."%";
 $LIKEpatho = "%".$patho."%";
 $LIKEsymptome = "%".$symptome."%";
 $LIKEmeridien = "%".$meridien."%";
+$selectTab = "";
+
+echo '$indexArray = ';
+print_r( $indexArray);
 
 if (isset($params['keywords_idk'])){
-    $indexTab = $indexTab."idk;";
+    array_push($indexArray, "idk");
+    $selectTab = $selectTab."keywords.idk, ";
 }
 
 if (isset($params['keywords_name'])){
-    $indexTab = $indexTab."mot-clef;";
+    array_push($indexArray, "mot-clef");
+    $selectTab = $selectTab."keywords.name, ";
 }
 
 if (isset($params['keySympt_ids'])){
-    $indexTab = $indexTab."ids;";
+    array_push($indexArray, "ids");
+    $selectTab = $selectTab."keySympt.ids, ";
 }
 
 if (isset($params['symptome_desc'])){
-    $indexTab = $indexTab."symptome;";
+    array_push($indexArray, "symptome");
+    $selectTab = $selectTab."symptome.desc, ";
 }
 
 if (isset($params['symptPatho_idp'])){
-    $indexTab = $indexTab."idp;";
+    array_push($indexArray, "idp");
+    $selectTab = $selectTab."symptPatho.idp, ";
 }
 
 if (isset($params['symptPatho_aggr'])){
-    $indexTab = $indexTab."aggr;";
+    array_push($indexArray, "aggr");
+    $selectTab = $selectTab."symptPatho.aggr, ";
 }
 
 if (isset($params['patho_mer'])){
-    $indexTab = $indexTab."patho mer;";
+    array_push($indexArray, "patho mer");
+    $selectTab = $selectTab."patho.mer, ";
 }
 
 if (isset($params['patho_type'])){
-    $indexTab = $indexTab."type;";
+    array_push($indexArray, "type");
+    $selectTab = $selectTab."patho.type, ";
 }
 
 if (isset($params['patho_desc'])){
-    $indexTab = $indexTab."patho;";
+    array_push($indexArray, "patho");
+    $selectTab = $selectTab."patho.desc, ";
 }
 
 if (isset($params['meridien_nom'])){
-    $indexTab = $indexTab."nom meridien;";
+    array_push($indexArray, "nom meridien");
+    $selectTab = $selectTab."meridien.nom, ";
 }
 
 if (isset($params['meridien_element'])){
-    $indexTab = $indexTab."element;";
+    array_push($indexArray, "element");
+    $selectTab = $selectTab."meridien.element, ";
 }
 
 if (isset($params['meridien_yin'] )){
-    $indexTab = $indexTab."yin;";
+    array_push($indexArray, "yin");
+    $selectTab = $selectTab."meridien.yin, ";
 }
 
+if ($selectTab != ""){
+    $selectTab = chop($selectTab,", ");
+}
 
 // test pour clément :
-echo '$indexTab = ';
-echo $indexTab;
-
+echo '$indexArray = ';
+print_r( $indexArray);
+echo '<br>';
+echo '$selectTab = ';
+print_r( $selectTab);
 
 // REQUETE SQL
+//SELECT keywords.idk, keywords.name, symptome.ids, symptome.desc, symptpatho.idp, symptpatho.aggr,
+//patho.mer, patho.type, patho.desc, meridien.nom, meridien.element, meridien.yin
+//FROM keywords 
 $sth = $conn->prepare("SELECT keywords.idk, keywords.name, symptome.ids, symptome.desc, symptpatho.idp, symptpatho.aggr,
 patho.mer, patho.type, patho.desc, meridien.nom, meridien.element, meridien.yin
 FROM keywords 
@@ -114,6 +138,7 @@ $sth->bindParam(':mot_clef',$LIKEmot_clef ,PDO::PARAM_STR);
 $sth->bindParam(':patho',   $LIKEpatho    ,PDO::PARAM_STR);
 $sth->bindParam(':symptome',$LIKEsymptome ,PDO::PARAM_STR);
 $sth->bindParam(':meridien',$LIKEmeridien ,PDO::PARAM_STR);
+//$sth->bindParam(':selectTab',$selectTab   ,PDO::PARAM_STR);
 
 //LANCER LA REQUETE SQL
 $sth-> execute();
