@@ -19,8 +19,7 @@ p {
 table
 {
     border-collapse: collapse;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
     width: 50%;
     height: 50%;
 }
@@ -72,6 +71,7 @@ caption {
 .tableau{
   text-align: center;
   width: 100%;
+  height: 10%;
   padding: 2% ;
 }
 
