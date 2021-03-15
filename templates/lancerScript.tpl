@@ -43,9 +43,6 @@
     <td>{$meridien}</td>
     </tr>
   </table>
-</div>
-<div class="checkbox">
-</div>
 
 <div class ="tableau">
   <table>
