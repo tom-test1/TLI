@@ -3,21 +3,13 @@
 $conn = new PDO('pgsql:host=localhost;port=5432;dbname=acudb','postgres-tli','tli');
 
 $username = $_POST['username'];
-$password = $_POST['password'];
-print_r("username : ".$username);
-echo"<br>";
-print_r("password : ".$password);
-echo"<br>";
+//$password = $_POST['password'];
+$passwordSha = sha1($_POST['password']);
 
-
-
-//////////////
-$sth = $conn->prepare("SELECT * FROM logg WHERE logg.username = '$username'");
-
+$sth = $conn->prepare("SELECT * FROM logg WHERE logg.username = :username");
 
 //REMPLACEMENT VARIABLE (++securité)
-
-//$sth->bindParam(':mot_clef',$LIKEmot_clef ,PDO::PARAM_STR);
+$sth->bindParam(':username',$username ,PDO::PARAM_STR);
 
 //LANCER LA REQUETE SQL
 $sth-> execute();
@@ -25,13 +17,29 @@ $sth-> execute();
 //facon d'affichger le resultat
 $result= $sth->fetchAll(PDO::FETCH_NUM);
 
-print_r($result);
-/////////////////
+
+$username_exist = 0;
+foreach ($result as $key => $value) {
+    foreach ($value as $key2 => $value2) {
+        if ($key2 == 0){
+            //echo "Username : {$value2} <br>";
+            if ($value2 == $username){
+                echo "cet username existe deja..<br>";
+                $username_exist = 1;
+            }
+        }
+        if ($key2 == 1){
+            //echo "Password : {$key2} <br>";
+        }
+    }
+}
 
 //if username existe pas, alors : ajouter
-
-$sql = "INSERT INTO public.logg VALUES ('$username', '$password')";
-$stmt= $conn->prepare($sql);
-$stmt->execute();
-
-//password_hash($psw)
+if (!$username_exist){
+    $sql = "INSERT INTO public.logg VALUES ('$username', '$passwordSha')";
+    $stmt= $conn->prepare($sql);
+    $stmt->execute();
+    echo "Votre compte a bien été crée !<br>";
+} else{
+    echo "Votre compte n'a pas été crée !<br>";
+}
