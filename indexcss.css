@@ -68,6 +68,17 @@ caption {
   padding: 10px 50px; 
 }
 
+.formulaireModif {
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+  padding: 10px 50px; 
+}
+
+.insideForm {
+  text-align: center;
+  padding: 5px;
+}
+
 .tableau{
   text-align: center;
   width: 100%;
