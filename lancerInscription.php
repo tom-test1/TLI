@@ -28,6 +28,10 @@ $result= $sth->fetchAll(PDO::FETCH_NUM);
 print_r($result);
 /////////////////
 
+//if username existe pas, alors : ajouter
 
+$sql = "INSERT INTO public.logg VALUES ('$username', '$password')";
+$stmt= $conn->prepare($sql);
+$stmt->execute();
 
 //password_hash($psw)
