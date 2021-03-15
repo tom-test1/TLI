@@ -24,8 +24,9 @@
     <a href=./page2.html>Gestion de compte utilisateur</a>
 
     <a href=./page3.html>Liste de toutes les pathologies 2</a>
-
 </div>
+
+
 <div class = tableau>
   <table>
   <caption>Recherche effectuée avec les mots suivants</caption>
@@ -50,18 +51,9 @@
   <table>
     <caption>Résultat de recherche</caption>
     <tr>
-      <th>idk</th>
-      <th>Mot-clef</th>
-      <th>ids</th>
-      <th>Patho</th>
-      <th>idp</th>
-      <th>aggr</th>
-      <th>mer</th>
-      <th>type</th>
-      <th>code</th>
-      <th>Meridien</th>
-      <th>element</th>
-      <th>yin</th>
+      {foreach from = $indexTab item = name}
+      <th>{$name}</th>
+      {/foreach}
     </tr>
 
     

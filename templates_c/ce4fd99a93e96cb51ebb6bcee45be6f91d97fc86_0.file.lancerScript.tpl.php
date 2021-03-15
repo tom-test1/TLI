@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-03-11 12:06:20
+/* Smarty version 3.1.39, created on 2021-03-15 08:34:49
   from '/var/www/html/TLI/templates/lancerScript.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6049f9acab9e72_49794794',
+  'unifunc' => 'content_604f0e19ea0468_13045559',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ce4fd99a93e96cb51ebb6bcee45be6f91d97fc86' => 
     array (
       0 => '/var/www/html/TLI/templates/lancerScript.tpl',
-      1 => 1615460778,
+      1 => 1615793687,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6049f9acab9e72_49794794 (Smarty_Internal_Template $_smarty_tpl) {
+function content_604f0e19ea0468_13045559 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 
 <html lang="fr-FR">
@@ -47,8 +47,9 @@ function content_6049f9acab9e72_49794794 (Smarty_Internal_Template $_smarty_tpl)
     <a href=./page2.html>Gestion de compte utilisateur</a>
 
     <a href=./page3.html>Liste de toutes les pathologies 2</a>
-
 </div>
+
+
 <div class = tableau>
   <table>
   <caption>Recherche effectuée avec les mots suivants</caption>
@@ -77,18 +78,17 @@ function content_6049f9acab9e72_49794794 (Smarty_Internal_Template $_smarty_tpl)
   <table>
     <caption>Résultat de recherche</caption>
     <tr>
-      <th>idk</th>
-      <th>Mot-clef</th>
-      <th>ids</th>
-      <th>Patho</th>
-      <th>idp</th>
-      <th>aggr</th>
-      <th>mer</th>
-      <th>type</th>
-      <th>code</th>
-      <th>Meridien</th>
-      <th>element</th>
-      <th>yin</th>
+      <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['indexTab']->value, 'name');
+$_smarty_tpl->tpl_vars['name']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['name']->value) {
+$_smarty_tpl->tpl_vars['name']->do_else = false;
+?>
+      <th><?php echo $_smarty_tpl->tpl_vars['name']->value;?>
+</th>
+      <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
     </tr>
 
     

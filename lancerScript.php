@@ -141,5 +141,7 @@ $smarty->assign('mot_clef',$mot_clef);
 $smarty->assign('patho',$patho);
 $smarty->assign('symptome',$symptome);
 $smarty->assign('meridien',$meridien);
+$smarty->assign('indexTab',$indexTab);
 $smarty->display('lancerScript.tpl');
+
 
