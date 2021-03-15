@@ -110,9 +110,6 @@ if ($selectTab != ""){
 }
 
 // test pour clément :
-echo '$indexArray = ';
-print_r( $indexArray);
-echo '<br>';
 echo '$selectTab = ';
 print_r( $selectTab);
 
@@ -120,9 +117,9 @@ print_r( $selectTab);
 //SELECT keywords.idk, keywords.name, symptome.ids, symptome.desc, symptpatho.idp, symptpatho.aggr,
 //patho.mer, patho.type, patho.desc, meridien.nom, meridien.element, meridien.yin
 //FROM keywords 
-$sth = $conn->prepare("SELECT keywords.idk, keywords.name, symptome.ids, symptome.desc, symptpatho.idp, symptpatho.aggr,
-patho.mer, patho.type, patho.desc, meridien.nom, meridien.element, meridien.yin
-FROM keywords 
+
+/*$idk = "keywords.idk";
+$sql = "SELECT ".$idk."FROM keywords 
 INNER JOIN keysympt ON keywords.idk = keysympt.idk 
 INNER JOIN symptome ON symptome.ids = keysympt.ids 
 INNER JOIN symptpatho ON symptpatho.ids = symptome.ids
@@ -131,14 +128,34 @@ INNER JOIN meridien ON meridien.code = patho.mer
 WHERE keywords.name LIKE :mot_clef 
 AND patho.desc LIKE :patho 
 AND symptome.desc LIKE :symptome 
-AND meridien.nom LIKE :meridien");
+AND meridien.nom LIKE :meridien";
 
+$sth = $conn->prepare($sql);*/
+
+$sth = $conn->prepare('SELECT keywords.idk, keywords.name, symptome.ids, symptome.desc, symptpatho.idp, symptpatho.aggr,
+patho.mer, patho.type, patho.desc, meridien.nom, meridien.element, meridien.yin
+FROM keywords
+INNER JOIN keysympt ON keywords.idk = keysympt.idk 
+INNER JOIN symptome ON symptome.ids = keysympt.ids 
+INNER JOIN symptpatho ON symptpatho.ids = symptome.ids
+INNER JOIN patho ON patho.idp = symptpatho.idp 
+INNER JOIN meridien ON meridien.code = patho.mer 
+WHERE keywords.name LIKE :mot_clef 
+AND patho.desc LIKE :patho 
+AND symptome.desc LIKE :symptome 
+AND meridien.nom LIKE :meridien');
+
+$idk = "keywords.idk";
 //REMPLACEMENT VARIABLE (++securité)
+
+//$sth->bindParam(":idk", $idk ,PDO::PARAM_STR);
+//$sth->bindParam(':selectTab',$selectTab   ,PDO::PARAM_STR);
+
 $sth->bindParam(':mot_clef',$LIKEmot_clef ,PDO::PARAM_STR);
 $sth->bindParam(':patho',   $LIKEpatho    ,PDO::PARAM_STR);
 $sth->bindParam(':symptome',$LIKEsymptome ,PDO::PARAM_STR);
 $sth->bindParam(':meridien',$LIKEmeridien ,PDO::PARAM_STR);
-//$sth->bindParam(':selectTab',$selectTab   ,PDO::PARAM_STR);
+
 
 //LANCER LA REQUETE SQL
 $sth-> execute();
