@@ -43,3 +43,5 @@ if (!$username_exist){
 } else{
     echo "Votre compte n'a pas été crée !<br>";
 }
+
+echo '<a href="/TLI/index.html">Continuer</a>';
