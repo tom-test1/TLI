@@ -39,6 +39,8 @@ if(isset($_COOKIE['user'])){
       $loggedin = $user["loggedin"];
       $username = $user["username"];
       $password = $user["password"];
+      $smarty->assign('username',$username);
+      $smarty->assign('password',$password);
     }
   }
 }
@@ -46,8 +48,6 @@ else{
   $loggedin = false;
 }
 $smarty->assign('loggedin',$loggedin);
-$smarty->assign('username',$username);
-$smarty->assign('password',$password);
 $smarty->display('page2.tpl');
 
 ?>
