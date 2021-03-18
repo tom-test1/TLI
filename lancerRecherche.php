@@ -118,8 +118,7 @@ print_r( $selectTab);
 //patho.mer, patho.type, patho.desc, meridien.nom, meridien.element, meridien.yin
 //FROM keywords 
 
-/*$idk = "keywords.idk";
-$sql = "SELECT ".$idk."FROM keywords 
+$sql = "SELECT ".$selectTab." FROM keywords 
 INNER JOIN keysympt ON keywords.idk = keysympt.idk 
 INNER JOIN symptome ON symptome.ids = keysympt.ids 
 INNER JOIN symptpatho ON symptpatho.ids = symptome.ids
@@ -130,27 +129,10 @@ AND patho.desc LIKE :patho
 AND symptome.desc LIKE :symptome 
 AND meridien.nom LIKE :meridien";
 
-$sth = $conn->prepare($sql);*/
+$sth = $conn->prepare($sql);
 
-$sth = $conn->prepare('SELECT keywords.idk, keywords.name, symptome.ids, symptome.desc, symptpatho.idp, symptpatho.aggr,
-patho.mer, patho.type, patho.desc, meridien.nom, meridien.element, meridien.yin
-FROM keywords
-INNER JOIN keysympt ON keywords.idk = keysympt.idk 
-INNER JOIN symptome ON symptome.ids = keysympt.ids 
-INNER JOIN symptpatho ON symptpatho.ids = symptome.ids
-INNER JOIN patho ON patho.idp = symptpatho.idp 
-INNER JOIN meridien ON meridien.code = patho.mer 
-WHERE keywords.name LIKE :mot_clef 
-AND patho.desc LIKE :patho 
-AND symptome.desc LIKE :symptome 
-AND meridien.nom LIKE :meridien');
 
-$idk = "keywords.idk";
 //REMPLACEMENT VARIABLE (++securité)
-
-//$sth->bindParam(":idk", $idk ,PDO::PARAM_STR);
-//$sth->bindParam(':selectTab',$selectTab   ,PDO::PARAM_STR);
-
 $sth->bindParam(':mot_clef',$LIKEmot_clef ,PDO::PARAM_STR);
 $sth->bindParam(':patho',   $LIKEpatho    ,PDO::PARAM_STR);
 $sth->bindParam(':symptome',$LIKEsymptome ,PDO::PARAM_STR);
@@ -163,19 +145,6 @@ $sth-> execute();
 //facon d'affichger le resultat
 $result= $sth->fetchAll(PDO::FETCH_NUM);
 //$result= $sth->fetchAll(PDO::FETCH_ASSOC);
-
-
-/*
-foreach ($result as $row) {
-    foreach ($row as $col=>$val) {
-        $g = gettype($val);
-        if (gettype($val) == "boolean")
-            echo $val ? 'Vrai' : 'Faux';
-        print " $col  : $val ; $g |";
-    }
-    print "<br>";
-}
-*/
 
 
 $smarty->assign('result',$result);
