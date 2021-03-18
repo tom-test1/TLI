@@ -56,20 +56,10 @@
   </form>
 </div>
 
-<p>Cliquez <a href=./page2.html>ici</a> pour aller sur la page2</p>
 
-<div class="formulaire">
-  <form action="./lancerRecherche.php">
-    <label for="pathos">Pathologie recherchée :</label>
-    <input type="text" id="pathos" name="pathos_name"/>
-    <br><br>
-    <input type="submit" value="Rechercher">
-  </form> 
-</div>
 
   <div class="formulaire">
   <form action="./effacerCookie.php">
-   
     <br>
     <input type="submit" value="SE DECONNECTER">
   </form> 
