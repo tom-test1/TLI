@@ -8,6 +8,7 @@ if (isset($_COOKIE['user'])) {
     //var_dump($_COOKIE, time() -3600);
 }
 
+echo 'Vous avez bien été déconnecté.<br>';
 echo 'Vous allez être redirigé... <a href="/TLI/index.php">Continuer</a>';
 
 ?>

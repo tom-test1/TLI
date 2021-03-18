@@ -55,15 +55,10 @@
         <input type="submit" value="Inscription">
     </form>
     </div>
-
-    <div class="formulaire">
-    <form action="./lancerRecherche.php">
-        <label for="pathos">Pathologie recherchée :</label>
-        <input type="text" id="pathos" name="pathos_name"/>
-        <br><br>
-        <input type="submit" value="Rechercher">
-    </form> 
-    </div>
+{else}
+  <div class="formulaire">
+    <p>Connecté en tant que $loggedin</p>
+  </div>
 {/if}
 
 <div class="formulaire">

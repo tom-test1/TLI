@@ -50,8 +50,8 @@
     </div>
 {else}
     <div>
-        <p>Vous devez être connecté pour pouvoir modifier vos informations</p>
         <div class="formulaire">
+        <p>Vous devez être connecté pour pouvoir modifier vos informations</p>
             <form action="./lancerConnexion.php" method=POST>
                 <h1>Connexion</h1>
 

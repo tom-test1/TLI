@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-03-18 12:36:57
+/* Smarty version 3.1.39, created on 2021-03-18 14:30:12
   from '/var/www/html/TLI/templates/page2.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_60533b59296271_22344197',
+  'unifunc' => 'content_605355e4413813_53924840',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1e281b75189402bcc06a12c51f9ef19c96bc6195' => 
     array (
       0 => '/var/www/html/TLI/templates/page2.tpl',
-      1 => 1616067380,
+      1 => 1616074209,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60533b59296271_22344197 (Smarty_Internal_Template $_smarty_tpl) {
+function content_605355e4413813_53924840 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 
 <html lang="fr-FR">
@@ -73,8 +73,8 @@ function content_60533b59296271_22344197 (Smarty_Internal_Template $_smarty_tpl)
     </div>
 <?php } else { ?>
     <div>
-        <p>Vous devez être connecté pour pouvoir modifier vos informations</p>
         <div class="formulaire">
+        <p>Vous devez être connecté pour pouvoir modifier vos informations</p>
             <form action="./lancerConnexion.php" method=POST>
                 <h1>Connexion</h1>
 
