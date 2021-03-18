@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 
 <html lang="fr-FR">
 
@@ -24,44 +24,27 @@
 
     <a href=./page2.php>Gestion de compte utilisateur</a>
     
-</div>
+</div> -->
 
 <?php
+require_once('./smarty/libs/Smarty.class.php');
+$smarty = new Smarty();
+$smarty->setTemplateDir('/var/www/html/TLI/templates');
+$smarty->setCompileDir('/var/www/html/TLI/templates_c/');
+$smarty->setCacheDir('/var/www/html/TLI/cache/');
 if(isset($_COOKIE['user'])){
   $user = json_decode($_COOKIE['user'], true);
   if(isset($user["loggedin"])){
     if($user["loggedin"] == "true"){
-      
-      echo '<div class ="formulaireModif">
-      <p>Changez ici vos informations utilisateur</p>
-      <form action="modifBddUser.php">
-        <div class = "insideForm">
-          <label for="name">Nom :</label>
-          <input type="text" id="name" name="user_name">
-        </div>
-      <div class = "insideForm">
-          <label for="forename">Prenom : </label>
-          <input type="text" id="forename" name="user_forename">
-      </div>
-      <div class = "insideForm">
-          <label for="forename">Date de naissance: </label>
-          <input type="date" id="birthdate" name="user_birthdate" value="2021-03-15" min="1930-01-01" max="2020-12-31">
-      </div>
-      <div class = "insideForm">
-        <input type="submit" value="Modifier mes informations utilisateur">
-      </div>
-      </form>
-    </div>';
-    
-
+      $loggedin = $user["loggedin"];
     }
   }
 }
+else{
+  $loggedin = false;
+}
+$smarty->assign('loggedin',$loggedin);
+$smarty->display('page2.tpl');
 
 ?>
-
-
-
-</body>
-</html>
 

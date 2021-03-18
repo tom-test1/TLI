@@ -1,4 +1,27 @@
-<!DOCTYPE html>
+<?php
+/* Smarty version 3.1.39, created on 2021-03-18 12:36:57
+  from '/var/www/html/TLI/templates/page2.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.39',
+  'unifunc' => 'content_60533b59296271_22344197',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '1e281b75189402bcc06a12c51f9ef19c96bc6195' => 
+    array (
+      0 => '/var/www/html/TLI/templates/page2.tpl',
+      1 => 1616067380,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_60533b59296271_22344197 (Smarty_Internal_Template $_smarty_tpl) {
+?><!DOCTYPE html>
 
 <html lang="fr-FR">
 
@@ -27,7 +50,7 @@
 </div>
 
 
-{if $loggedin == 'true'}
+<?php if ($_smarty_tpl->tpl_vars['loggedin']->value == 'true') {?>
     <div class ="formulaireModif">
         <p>Changez ici vos informations utilisateur</p>
         <form action="modifBddUser.php">
@@ -48,7 +71,7 @@
         </div>
         </form>
     </div>
-{else}
+<?php } else { ?>
     <div>
         <p>Vous devez être connecté pour pouvoir modifier vos informations</p>
         <div class="formulaire">
@@ -68,8 +91,9 @@
             </form>
         </div>
     </div>
-{/if}
+<?php }?>
 
 
 </body>
-</html>
+</html><?php }
+}
