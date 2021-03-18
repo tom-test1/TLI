@@ -42,8 +42,6 @@ $LIKEsymptome = "%".$symptome."%";
 $LIKEmeridien = "%".$meridien."%";
 $selectTab = "";
 
-echo '$indexArray = ';
-print_r( $indexArray);
 
 if (isset($params['keywords_idk'])){
     array_push($indexArray, "idk");
@@ -109,9 +107,13 @@ if ($selectTab != ""){
     $selectTab = chop($selectTab,", ");
 }
 
-// test pour clément :
-echo '$selectTab = ';
+// test débugger :
+/*echo '$selectTab = ';
 print_r( $selectTab);
+echo '<br>';
+echo '$indexArray = ';
+print_r( $indexArray);
+echo '<br>';*/
 
 // REQUETE SQL
 //SELECT keywords.idk, keywords.name, symptome.ids, symptome.desc, symptpatho.idp, symptpatho.aggr,
