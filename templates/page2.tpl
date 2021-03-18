@@ -29,6 +29,7 @@
 
 {if $loggedin == 'true'}
     <div class ="formulaireModif">
+    <p>Connecté en tant que <b>{$username}</b></p>
         <p>Changez ici vos informations utilisateur</p>
         <form action="modifBddUser.php">
             <div class = "insideForm">
