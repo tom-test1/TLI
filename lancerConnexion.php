@@ -1,4 +1,4 @@
-<meta http-equiv="refresh" content="2; url=./index.php">
+<meta http-equiv="refresh" content="10; url=./index.php">
 <?php
 
 $conn = new PDO('pgsql:host=localhost;port=5432;dbname=acudb','postgres-tli','tli');
@@ -34,12 +34,16 @@ foreach ($result as $key => $value) {
         }
         if ($key2 == 1){
             //echo "Password : {$key2} <br>";
+            if ($username_exist){
+                $mdpSha = $value2;
+            }
         }
     }
 }
 
+
 if ($username_exist){
-    if ($passwordSha == $value2){
+    if ($passwordSha == $mdpSha){
         echo "Connexion réussie !<br>";
         if ($stayConnected == true){
             session_start();
