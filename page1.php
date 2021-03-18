@@ -99,5 +99,3 @@
 
 </body>
 </html>
-
-<!DOCTYPE html>
