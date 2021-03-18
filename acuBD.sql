@@ -2548,35 +2548,31 @@ INSERT INTO public.symptPatho(idS, idP, aggr) VALUES
 ;
 
 
-DROP TABLE IF EXISTS public.keySympt;
-CREATE TABLE public.keySympt (
-  idK INTEGER NOT NULL,
-  idS INTEGER NOT NULL,
-  CONSTRAINT PK_keySympt PRIMARY KEY (idK, idS)
-);
-COMMENT ON TABLE public.keySympt
-  IS 'Relations entre Symptômes et Mots-clé (many-to-many)';
-COMMENT ON COLUMN public.keySympt.idK 
-  IS 'Clé étrangère, référence keywords.idK';
-COMMENT ON COLUMN public.keySympt.idS 
-  IS 'Clé étrangère, référence symptome.idS';
-COMMENT ON CONSTRAINT PK_keySympt ON public.keySympt 
-  IS 'Clé primaire (cluster)';
-
-
 
 DROP TABLE IF EXISTS public.logg;
 CREATE TABLE public.logg(
   username character varying(20)
       COLLATE pg_catalog."fr_FR.utf8",
   password character varying(40) 
+      COLLATE pg_catalog."fr_FR.utf8",
+  name character varying(20) 
+      COLLATE pg_catalog."fr_FR.utf8",
+  surname character varying(20) 
+      COLLATE pg_catalog."fr_FR.utf8",
+  birthdate character varying(12) 
       COLLATE pg_catalog."fr_FR.utf8"
-
 );
+
 COMMENT ON TABLE public.logg
   IS 'Gestion comptes';
 COMMENT ON COLUMN public.logg.username
   IS 'Username';
 COMMENT ON COLUMN public.logg.password
   IS 'mot de passe';
+COMMENT ON COLUMN public.logg.name
+  IS 'nom';
+COMMENT ON COLUMN public.logg.surname
+  IS 'prénom';
+COMMENT ON COLUMN public.logg.birthdate
+  IS 'date de naissance';
 
