@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-03-15 10:18:37
+/* Smarty version 3.1.39, created on 2021-03-18 10:57:32
   from '/var/www/html/TLI/templates/lancerScript.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_604f266d6f5459_70604527',
+  'unifunc' => 'content_6053240c01b1e6_13197810',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ce4fd99a93e96cb51ebb6bcee45be6f91d97fc86' => 
     array (
       0 => '/var/www/html/TLI/templates/lancerScript.tpl',
-      1 => 1615795246,
+      1 => 1616061269,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_604f266d6f5459_70604527 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6053240c01b1e6_13197810 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 
 <html lang="fr-FR">
@@ -45,8 +45,6 @@ function content_604f266d6f5459_70604527 (Smarty_Internal_Template $_smarty_tpl)
     <a href=./page1.html>Liste de toutes les pathologies</a>
 
     <a href=./page2.html>Gestion de compte utilisateur</a>
-
-    <a href=./page3.html>Liste de toutes les pathologies 2</a>
 </div>
 
 

@@ -42,8 +42,6 @@ $LIKEsymptome = "%".$symptome."%";
 $LIKEmeridien = "%".$meridien."%";
 $selectTab = "";
 
-echo '$indexArray = ';
-print_r( $indexArray);
 
 if (isset($params['keywords_idk'])){
     array_push($indexArray, "idk");
@@ -109,22 +107,20 @@ if ($selectTab != ""){
     $selectTab = chop($selectTab,", ");
 }
 
-// test pour clément :
-echo '$selectTab = ';
+// test débugger :
+/*echo '$selectTab = ';
 print_r( $selectTab);
+echo '<br>';
+echo '$indexArray = ';
+print_r( $indexArray);
+echo '<br>';*/
 
-<<<<<<< HEAD
 // REQUETE SQL
 //SELECT keywords.idk, keywords.name, symptome.ids, symptome.desc, symptpatho.idp, symptpatho.aggr,
 //patho.mer, patho.type, patho.desc, meridien.nom, meridien.element, meridien.yin
 //FROM keywords 
 
 $sql = "SELECT ".$selectTab." FROM keywords 
-=======
-$sth = $conn->prepare('SELECT keywords.idk, keywords.name, symptome.ids, symptome.desc, symptpatho.idp, symptpatho.aggr,
-patho.mer, patho.type, patho.desc, meridien.nom, meridien.element, meridien.yin
-FROM keywords
->>>>>>> 87acaf2d75c784cfd835384b10462851cdb21f45
 INNER JOIN keysympt ON keywords.idk = keysympt.idk 
 INNER JOIN symptome ON symptome.ids = keysympt.ids 
 INNER JOIN symptpatho ON symptpatho.ids = symptome.ids
@@ -133,14 +129,10 @@ INNER JOIN meridien ON meridien.code = patho.mer
 WHERE keywords.name LIKE :mot_clef 
 AND patho.desc LIKE :patho 
 AND symptome.desc LIKE :symptome 
-<<<<<<< HEAD
 AND meridien.nom LIKE :meridien";
 
 $sth = $conn->prepare($sql);
 
-=======
-AND meridien.nom LIKE :meridien');
->>>>>>> 87acaf2d75c784cfd835384b10462851cdb21f45
 
 //REMPLACEMENT VARIABLE (++securité)
 $sth->bindParam(':mot_clef',$LIKEmot_clef ,PDO::PARAM_STR);
