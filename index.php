@@ -17,9 +17,9 @@
 
 <div class="menuDuHaut">
 
-    <a href=./index.html>Accueil</a>
+    <a href=./index.php>Accueil</a>
 
-    <a href=./page1.html>Liste de toutes les pathologies</a>
+    <a href=./page1.php>Liste de toutes les pathologies</a>
 
     <a href=./page2.php>Gestion de compte utilisateur</a>
 
@@ -67,14 +67,13 @@
   </form> 
 </div>
 
-<div class="formulaire">
+  <div class="formulaire">
   <form action="./effacerCookie.php">
    
     <br>
     <input type="submit" value="SE DECONNECTER">
   </form> 
 </div>
-
 </body>
 </html>
 
