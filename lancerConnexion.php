@@ -58,4 +58,4 @@ if ($username_exist){
     echo "Cet username n'existe pas !<br>";
 }
 
-echo '<a href="/TLI/index.html">Continuer</a>';
+echo '<a href="/TLI/index.php">Continuer</a>';

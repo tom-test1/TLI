@@ -9,5 +9,5 @@ if (isset($_COOKIE['user'])) {
 
 
 
-echo '<a href="/TLI/index.html">Continuer</a>';
+echo '<a href="/TLI/index.php">Continuer</a>';
 
