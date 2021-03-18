@@ -42,7 +42,7 @@ if ($username_exist){
         echo "Connexion réussie !<br>";
         if ($stayConnected == true){
             session_start();
-            $_SESSION['stayConnected'] = 1;
+            $_SESSION['stayConnected'] = "true";
             // store user data in cookie
             setcookie('user', json_encode([
             'username' => $username,
