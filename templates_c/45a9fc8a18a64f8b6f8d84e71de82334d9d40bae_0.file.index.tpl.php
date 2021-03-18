@@ -1,18 +1,15 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-03-18 14:31:13
-  from '/var/www/html/TLI/templates/index.tpl' */
-
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_60535621e8a1a6_61914144',
+  'unifunc' => 'content_6053569475fed0_82547237',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '45a9fc8a18a64f8b6f8d84e71de82334d9d40bae' => 
     array (
       0 => '/var/www/html/TLI/templates/index.tpl',
-      1 => 1616074270,
+      1 => 1616074379,
       2 => 'file',
     ),
   ),
@@ -20,7 +17,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60535621e8a1a6_61914144 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6053569475fed0_82547237 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 
 <html lang="fr-FR">
@@ -80,8 +77,13 @@ function content_60535621e8a1a6_61914144 (Smarty_Internal_Template $_smarty_tpl)
     </div>
 <?php } else { ?>
   <div class="formulaire">
+<<<<<<< HEAD
     <p>Connecté en tant que <?php echo $_smarty_tpl->tpl_vars['loggedin']->value;?>
 </p>
+=======
+    <p>Connecté en tant que <b><?php echo $_smarty_tpl->tpl_vars['username']->value;?>
+</b></p>
+>>>>>>> 32cb10e7936429995c30c269a5351e918c7ba5f7
   </div>
 <?php }?>
 
