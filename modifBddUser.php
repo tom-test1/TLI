@@ -1,5 +1,7 @@
 <?php
 
+$conn = new PDO('pgsql:host=localhost;port=5432;dbname=acudb','postgres-tli','tli');
+
 // ____LE SCRIPT CI DESSOUS SERT A RECUPERER LES PARAMETRES DE L URL_____
 if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')   
 $url = "https://";   
@@ -23,7 +25,26 @@ $url_components = parse_url($url);
 parse_str($url_components['query'], $params); 
 
 
-$mot_clef = $params['user_name'];
-$patho = $params['patho'];
-$symptome = $params['symptome'];
-$meridien = $params['meridien'];
+$name = $params['user_name'];
+$forename= $params['user_forename'];
+$birthdate = $params['user_birthdate'];
+if(isset($_COOKIE['user'])){
+    $user = json_decode($_COOKIE['user'], true);
+    if(isset($user["loggedin"])){
+      if($user["loggedin"] == "true"){
+        $loggedin = $user["loggedin"];
+        $username = $user["username"];
+        $password = $user["password"];
+      }
+    }
+  }
+
+$sql = "UPDATE public.logg SET name = :name, surname = :forename, birthdate = :birthdate WHERE username = :username";
+
+echo $sql;
+$stmt= $conn->prepare($sql);
+$stmt->bindParam(':username',$username ,PDO::PARAM_STR);
+$stmt->bindParam(':name',$name ,PDO::PARAM_STR);
+$stmt->bindParam(':forename',$forename ,PDO::PARAM_STR);
+$stmt->bindParam(':birthdate',$birthdate ,PDO::PARAM_STR);
+$stmt->execute();
