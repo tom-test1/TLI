@@ -14,7 +14,7 @@
 
 <h1>Site de l'Association des Acupuncteurs soucieux de l'Accessibilité</h1>
 
-<h2>(AAAc)</h2>
+<h2>Gestion compte utilisateur</h2>
 
 <div class="menuDuHaut">
 

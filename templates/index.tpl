@@ -13,7 +13,7 @@
 
 
 <h1>Site de l'Association des Acupuncteurs soucieux de l'Accessibilité</h1>
-<h2>(AAA)</h2>
+<h2>Accueil</h2>
 
 <div class="menuDuHaut">
 

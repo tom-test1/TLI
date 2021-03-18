@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-03-18 14:50:21
+/* Smarty version 3.1.39, created on 2021-03-18 14:51:04
   from '/var/www/html/TLI/templates/page2.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_60535a9dc21465_19667427',
+  'unifunc' => 'content_60535ac8099e95_51268418',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1e281b75189402bcc06a12c51f9ef19c96bc6195' => 
     array (
       0 => '/var/www/html/TLI/templates/page2.tpl',
-      1 => 1616074932,
+      1 => 1616075458,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60535a9dc21465_19667427 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60535ac8099e95_51268418 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 
 <html lang="fr-FR">
@@ -37,7 +37,7 @@ function content_60535a9dc21465_19667427 (Smarty_Internal_Template $_smarty_tpl)
 
 <h1>Site de l'Association des Acupuncteurs soucieux de l'Accessibilité</h1>
 
-<h2>(AAAc)</h2>
+<h2>Gestion compte utilisateur</h2>
 
 <div class="menuDuHaut">
 

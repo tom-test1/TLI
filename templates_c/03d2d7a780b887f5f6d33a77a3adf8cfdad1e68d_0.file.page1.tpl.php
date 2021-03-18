@@ -1,18 +1,30 @@
 <?php
+<<<<<<< HEAD
 /* Smarty version 3.1.39, created on 2021-03-18 14:49:29
+=======
+/* Smarty version 3.1.39, created on 2021-03-18 14:51:01
+>>>>>>> 928baed50e9666b2b550802f05bd1f1282e4dca0
   from '/var/www/html/TLI/templates/page1.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
+<<<<<<< HEAD
   'unifunc' => 'content_60535a69629fa9_68840138',
+=======
+  'unifunc' => 'content_60535ac59f87b2_03599859',
+>>>>>>> 928baed50e9666b2b550802f05bd1f1282e4dca0
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '03d2d7a780b887f5f6d33a77a3adf8cfdad1e68d' => 
     array (
       0 => '/var/www/html/TLI/templates/page1.tpl',
+<<<<<<< HEAD
       1 => 1616074787,
+=======
+      1 => 1616075445,
+>>>>>>> 928baed50e9666b2b550802f05bd1f1282e4dca0
       2 => 'file',
     ),
   ),
@@ -20,7 +32,11 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
+<<<<<<< HEAD
 function content_60535a69629fa9_68840138 (Smarty_Internal_Template $_smarty_tpl) {
+=======
+function content_60535ac59f87b2_03599859 (Smarty_Internal_Template $_smarty_tpl) {
+>>>>>>> 928baed50e9666b2b550802f05bd1f1282e4dca0
 ?><!DOCTYPE html>
 
 <html lang="fr-FR">
@@ -37,7 +53,11 @@ function content_60535a69629fa9_68840138 (Smarty_Internal_Template $_smarty_tpl)
 
 <h1>Site de l'Association des Acupuncteurs soucieux de l'Accessibilité</h1>
 
+<<<<<<< HEAD
 <h2>(AAA)</h2>
+=======
+<h2>Liste de toutes les pathologies</h2>
+>>>>>>> 928baed50e9666b2b550802f05bd1f1282e4dca0
 
 <div class="menuDuHaut">
 
