@@ -24,7 +24,7 @@
     <a href=./page2.php>Gestion de compte utilisateur</a>
 
 </div>
-{if $loggedin == 'true'}
+{if $loggedin == 'false'}
     <div class="formulaire">
     <form action="./lancerConnexion.php" method=POST>
         <h1>Connexion</h1>
