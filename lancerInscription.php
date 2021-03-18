@@ -1,3 +1,4 @@
+<meta http-equiv="refresh" content="2; url=./index.php">
 <?php
 
 $conn = new PDO('pgsql:host=localhost;port=5432;dbname=acudb','postgres-tli','tli');
@@ -44,4 +45,4 @@ if (!$username_exist){
     echo "Votre compte n'a pas été crée !<br>";
 }
 
-echo '<a href="/TLI/index.php">Continuer</a>';
+echo 'Vous allez être redirigé... <a href="/TLI/index.php">Continuer</a>';

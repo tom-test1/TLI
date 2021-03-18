@@ -1,3 +1,5 @@
+<meta http-equiv="refresh" content="1.5; url=./index.php">
+
 <?php
 
 if (isset($_COOKIE['user'])) {
@@ -6,4 +8,6 @@ if (isset($_COOKIE['user'])) {
     //var_dump($_COOKIE, time() -3600);
 }
 
-echo '<a href="/TLI/index.php">Continuer</a>';
+echo 'Vous allez être redirigé... <a href="/TLI/index.php">Continuer</a>';
+
+?>
