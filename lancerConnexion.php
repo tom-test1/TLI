@@ -1,4 +1,4 @@
-<meta http-equiv="refresh" content="10; url=./index.php">
+<meta http-equiv="refresh" content="2; url=./index.php">
 <?php
 
 $conn = new PDO('pgsql:host=localhost;port=5432;dbname=acudb','postgres-tli','tli');
