@@ -41,7 +41,6 @@ if(isset($_COOKIE['user'])){
 
 $sql = "UPDATE public.logg SET name = :name, surname = :forename, birthdate = :birthdate WHERE username = :username";
 
-echo $sql;
 $stmt= $conn->prepare($sql);
 $stmt->bindParam(':username',$username ,PDO::PARAM_STR);
 $stmt->bindParam(':name',$name ,PDO::PARAM_STR);
