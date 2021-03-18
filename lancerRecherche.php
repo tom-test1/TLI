@@ -113,25 +113,6 @@ if ($selectTab != ""){
 echo '$selectTab = ';
 print_r( $selectTab);
 
-// REQUETE SQL
-//SELECT keywords.idk, keywords.name, symptome.ids, symptome.desc, symptpatho.idp, symptpatho.aggr,
-//patho.mer, patho.type, patho.desc, meridien.nom, meridien.element, meridien.yin
-//FROM keywords 
-
-/*$idk = "keywords.idk";
-$sql = "SELECT ".$idk."FROM keywords 
-INNER JOIN keysympt ON keywords.idk = keysympt.idk 
-INNER JOIN symptome ON symptome.ids = keysympt.ids 
-INNER JOIN symptpatho ON symptpatho.ids = symptome.ids
-INNER JOIN patho ON patho.idp = symptpatho.idp 
-INNER JOIN meridien ON meridien.code = patho.mer 
-WHERE keywords.name LIKE :mot_clef 
-AND patho.desc LIKE :patho 
-AND symptome.desc LIKE :symptome 
-AND meridien.nom LIKE :meridien";
-
-$sth = $conn->prepare($sql);*/
-
 $sth = $conn->prepare('SELECT keywords.idk, keywords.name, symptome.ids, symptome.desc, symptpatho.idp, symptpatho.aggr,
 patho.mer, patho.type, patho.desc, meridien.nom, meridien.element, meridien.yin
 FROM keywords
@@ -165,19 +146,6 @@ $result= $sth->fetchAll(PDO::FETCH_NUM);
 //$result= $sth->fetchAll(PDO::FETCH_ASSOC);
 
 
-/*
-foreach ($result as $row) {
-    foreach ($row as $col=>$val) {
-        $g = gettype($val);
-        if (gettype($val) == "boolean")
-            echo $val ? 'Vrai' : 'Faux';
-        print " $col  : $val ; $g |";
-    }
-    print "<br>";
-}
-*/
-
-
 $smarty->assign('result',$result);
 $smarty->assign('mot_clef',$mot_clef);
 $smarty->assign('patho',$patho);
@@ -185,5 +153,3 @@ $smarty->assign('symptome',$symptome);
 $smarty->assign('meridien',$meridien);
 $smarty->assign('indexTab',$indexArray);
 $smarty->display('lancerScript.tpl');
-
-

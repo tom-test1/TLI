@@ -50,7 +50,7 @@ caption {
 /* Style de la barre de navigation */
 .menuDuHaut {
   display: grid;
-  grid-template-columns: repeat(4,1fr);
+  grid-template-columns: repeat(3,1fr);
   overflow: hidden; /*avoir la barre du menu jusqu'au bout*/
   background-color: #333; /*gris-noir*/
   width: 100%;
