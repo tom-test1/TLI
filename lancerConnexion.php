@@ -46,7 +46,8 @@ if ($username_exist){
             // store user data in cookie
             setcookie('user', json_encode([
             'username' => $username,
-            'password' => $passwordSha
+            'password' => $passwordSha,
+            'loggedin' => "true"
             ]), time() + 3600 * 24 ); //rester connecté sur 24h
         }
 
