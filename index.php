@@ -35,7 +35,7 @@
     <label><b>Mot de passe</b></label>
     <input type="password" placeholder="Entrer le mot de passe" name="password" required>
     <br>
-    <input type="checkbox" id="stayConnected" name="stayConnected" value="true">
+    <input type="checkbox" id="stayConnected" name="stayConnected" value="true" checked>
     <label for="stayConnected"> Rester connecté </label>
     <br><br>
     <input type="submit" value="Connexion">
