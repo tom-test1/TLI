@@ -48,7 +48,7 @@ if ($username_exist){
             'username' => $username,
             'password' => $passwordSha,
             'loggedin' => "true"
-            ]), time() + 3600 * 24 ); //rester connecté sur 24h
+            ]), time() + 3600 * 24 , '/'); //rester connecté sur 24h
         }
 
     } else {
