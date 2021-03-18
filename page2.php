@@ -22,7 +22,7 @@
 
     <a href=./page1.html>Liste de toutes les pathologies</a>
 
-    <a href=./page2.html>Gestion de compte utilisateur</a>
+    <a href=./page2.php>Gestion de compte utilisateur</a>
     
 </div>
 
