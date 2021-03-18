@@ -18,8 +18,8 @@ else{
   $loggedin = false;
 }
 $smarty->assign('loggedin',$loggedin);
-$smarty->assign('loggedin',$loggedin);
-$smarty->assign('loggedin',$loggedin);
+$smarty->assign('username',$username);
+$smarty->assign('password',$password);
 $smarty->display('index.tpl');
 
 ?>
