@@ -57,7 +57,7 @@
     </div>
 {else}
   <div class="formulaire">
-    <p>Connecté en tant que $loggedin</p>
+    <p>Connecté en tant que {$loggedin}</p>
   </div>
 {/if}
 
