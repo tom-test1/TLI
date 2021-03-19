@@ -105,7 +105,22 @@ if (isset($params['meridien_yin'] )){
 
 if ($selectTab != ""){
     $selectTab = chop($selectTab,", ");
+} else{
+    $selectTab = "keywords.idk, keywords.name, symptome.ids, symptome.desc, symptpatho.idp, symptpatho.aggr, patho.mer, patho.type, patho.desc, meridien.nom, meridien.element, meridien.yin";
+    array_push($indexArray, "idk");
+    array_push($indexArray, "mot-clef");
+    array_push($indexArray, "ids");
+    array_push($indexArray, "symptome");
+    array_push($indexArray, "idp");
+    array_push($indexArray, "aggr");
+    array_push($indexArray, "patho mer");
+    array_push($indexArray, "type");
+    array_push($indexArray, "patho");
+    array_push($indexArray, "nom meridien");
+    array_push($indexArray, "element");
+    array_push($indexArray, "yin");
 }
+
 
 // test débugger :
 /*echo '$selectTab = ';
